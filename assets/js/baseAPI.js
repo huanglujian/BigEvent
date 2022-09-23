@@ -7,7 +7,6 @@ $.ajaxPrefilter(function (options) {
   options.url = 'http://www.liulongbin.top:3007' + options.url
   /* 这个 options.url 就是 我们在 $.post 中 给的 url ，因为在那边 只给 URL后面的部分，这边再给平完整  */
   // 添加 headers 属性
-  console.log(options)
   if (options['url'].indexOf('/my/') !== -1) {
     options.headers = { Authorization: localStorage.getItem('token') || '' }
   }

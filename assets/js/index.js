@@ -8,7 +8,6 @@ function getUserInfo() {
     method: "GET",
     url: '/my/userinfo',
     success: function (res) {
-      console.log(res)
       if (res.status !== 0) return layui.layer.msg(res.message)
       renderAvatar(res.data)
     }
@@ -19,7 +18,7 @@ function renderAvatar(data) {
   const name = data['nickname'] || data['username']
   $('.welcome').html(`欢迎  ${name}`)
   if (data.user_pic !== null) {
-    $('.uesrinfo').attr('src', data.user_pic)
+    $('.uesrinfo img').attr('src', data.user_pic)
     $('.text-avatar').hide()
     $('.layui-nav-img').show()
   } else {
@@ -39,3 +38,5 @@ $('.logout').on('click', function () {
   })
 
 })
+
+$()
