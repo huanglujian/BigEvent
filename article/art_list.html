@@ -16,7 +16,7 @@
             <span>文章类型管理</span>
         </div>
         <div class="layui-card-body">
-            <form class="layui-form" action="">
+            <form class="layui-form" id="form-search">
                 <div class="layui-form-item layui-inline">
                     <select name="cate_name">
                         <!-- <option value="">所有分类</option>
@@ -33,7 +33,7 @@
                     </select>
                 </div>
                 <div class="layui-form-item layui-inline">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" type="submit">立即提交</button>
                 </div>
             </form>
             <table class="layui-table">
@@ -61,8 +61,11 @@
                   </tr> -->
                 </tbody>
             </table>
+
+            <div id="laypage"></div>
         </div>
     </div>
+
 
     <script type="text/html" id="tpl-table">
         {{ each data}}
